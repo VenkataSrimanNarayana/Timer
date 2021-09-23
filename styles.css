@@ -1,0 +1,43 @@
+button{
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+    background-color: black;
+    font-size: 1rem;
+    color:white;
+}
+
+.buttons{
+    margin: auto;
+    width: 38%;
+}
+#counter{
+    margin: auto;
+    text-align: center;
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 40px;
+    height: 40px;
+}
+#number{
+    margin-top: 27%;
+}
+#start-btn{
+    background-color: green;
+}
+#pause-btn{
+    background-color: gray;
+}
+#btn-reset{
+    background-color: red;
+}
+main{
+    text-align: center;
+}
+
+body{
+    padding:15vh 0%;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Time Counter</title>
+</head>
+<body>
+    <main>
+        <div id="counter">
+            <div id="number">0</div>
+        </div>
+        <div class = "buttons">
+            <button id = "btn-increment">Increment</button>
+            <button id = "btn-decrement">Decrement</button>
+            <button id = "btn-reset">Reset</button>
+            <button id = "start-btn">Start</button>
+            <button id = "pause-btn">Pause</button>
+        </div>
+    </main>
+    <script>
+        const counter = document.getElementById("counter");
+        const incrementBtn = document.getElementById("btn-increment");
+        const decrementBtn = document.getElementById("btn-decrement");
+        const resetBtn = document.getElementById("btn-reset");
+        const startBtn = document.getElementById("start-btn");
+        const pauseBtn = document.getElementById("pause-btn");
+
+        let counterValue = 0;
+        let counterState = 0;
+        incrementBtn.addEventListener('click', function(event){
+            counterValue += 1;
+            number.innerHTML = counterValue;
+        });
+        decrementBtn.addEventListener('click', function(event){
+            if(counterValue != 0){    
+                counterValue -= 1;
+                number.innerHTML = counterValue;
+            }
+        });
+        resetBtn.addEventListener('click', function(event){
+            counterValue = 0;
+            number.innerHTML = counterValue;
+        });
+        startBtn.addEventListener('click', function(event){
+            counterState = 1;
+        });
+        pauseBtn.addEventListener('click', function(event){
+            counterState = 0;
+        });
+        var intervalId = window.setInterval(function(){
+            if(counterState == 1 && counterValue != 0){
+                counterValue -= 1;
+                number.innerHTML = counterValue;
+            }
+            else{
+                counterState = 0;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
